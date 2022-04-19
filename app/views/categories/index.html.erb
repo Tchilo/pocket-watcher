@@ -1,0 +1,22 @@
+ <nav class='nav'>
+  <i class="fa-solid fa-bars"></i>
+  <h2>TRANSACTIONS</h2>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+</nav>
+    <%= render partial: "devise/shared/notification" %>
+<% @categories.each do |item| %>
+  <div class='card'>
+    <div class='i-div'>
+      <%= image_tag(item.icon, class: "img")%>
+    </div>
+    <div>
+      <h2>
+        <%= link_to item.name, category_records_path(item.id) %>
+      </h2>
+      <span>Total:$ <%= item.records.reduce(0) { |sum, item| sum + item.amount } %></span>
+    </div>
+  </div>
+<% end %>
+<div class="add-div">
+  <%= link_to 'Add new category', new_category_path, class: 'add-btn' %>
+</div>

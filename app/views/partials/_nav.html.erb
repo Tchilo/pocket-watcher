@@ -1,0 +1,8 @@
+   <nav>
+      <%= link_to 'Microblog', root_path, class: 'logo' %>
+      <% if current_user %>
+        <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign in', user_session_path %>
+      <% end %>
+    </nav>
