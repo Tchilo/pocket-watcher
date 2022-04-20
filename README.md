@@ -61,6 +61,9 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 
+## Acknowledgement
+This page design was an inspiration from the original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.

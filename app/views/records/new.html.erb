@@ -25,8 +25,8 @@
       <div class="card checkbox">
         <%= form.label :categories, 'Select a Category', class: 'title' %><br>
         <%= form.collection_check_boxes :category_ids, Category.where(user_id: current_user.id), :id, :name, class: '' do |cat| %>
-          <div class="checkbox-div" required: true>
-            <%= cat.check_box  required:true%>
+          <div class="checkbox-div" required>
+            <%= cat.check_box%>
             <%= cat.label %><br>
           </div>
         <% end %>
