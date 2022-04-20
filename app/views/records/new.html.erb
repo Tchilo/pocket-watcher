@@ -13,11 +13,11 @@
     </div>
     <div class="textField">
       <div class="field">
-        <%= form.text_field :name, placeholder: "Transaction name", autofocus: true, autocomplete: "name", class: "form-control stuff" %>
+        <%= form.text_field :name, placeholder: "Transaction name", autofocus: true, autocomplete: "name", class: "form-control stuff",required: true %>
       </div>
 
       <div class="field">
-        <%= form.text_field :amount, placeholder: "Amount", autofocus: true, autocomplete: "email", class: "form-control stuff" %>
+        <%= form.text_field :amount, placeholder: "Amount", autofocus: true, autocomplete: "email", class: "form-control stuff",required: true %>
       </div>
 
       <div class="card checkbox">
