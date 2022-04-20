@@ -7,13 +7,13 @@
       <div>
         ADD A NEW TRANSACTION
       </div>
-    <%= render partial: "devise/shared/notification" %>
 
       <div class="actions">
         <%= form.submit "ADD", class: "loginBtn" %>
       </div>
     </div>
     <div class="textField">
+    <%= render partial: "devise/shared/notification" %>
       <div class="field">
         <%= form.text_field :name, placeholder: "Transaction name", autofocus: true, autocomplete: "name", class: "form-control stuff",required: true %>
       </div>
@@ -25,9 +25,9 @@
       <div class="card checkbox">
         <%= form.label :categories, 'Select a Category', class: 'title' %><br>
         <%= form.collection_check_boxes :category_ids, Category.where(user_id: current_user.id), :id, :name, class: '' do |cat| %>
-          <div class="checkbox-div">
-            <%= cat.check_box %>
-            <%= cat.label class: 'checkbox' %><br>
+          <div class="checkbox-div" required: true>
+            <%= cat.check_box  required:true%>
+            <%= cat.label %><br>
           </div>
         <% end %>
       </div>

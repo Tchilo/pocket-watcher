@@ -6,6 +6,7 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 250 }
 
+
   def recent_categories
     categories.order(created_at: :DESC)
   end
