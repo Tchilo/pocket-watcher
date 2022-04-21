@@ -1,0 +1,33 @@
+<nav class='nav'>
+  <%= link_to categories_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+  <h2>TRANSACTIONS</h2>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+</nav>
+<div class="card">
+  <h3 class="">Total Amount: </h3>
+  <h5>$ <%= @category.recent_records.reduce(0) { |sum, item| sum + item.amount } %></h5>
+</div>
+<section class="">
+  <ul class="">
+    <% @category.recent_records.each do |record| %>
+      <li class="card">
+        <div class="d-flex">
+          <h3 class="">
+            <%= record.name %>
+          </h3>
+          <span>$ <%= record.amount %></span>
+        </div>|
+        <span>
+        date:
+        <%= record.created_at.strftime("%d %b %Y") %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<div class="add-div">
+  <%= link_to "ADD A NEW TRANSACTION", new_category_record_path, class: "add-btn"%>
+</div>

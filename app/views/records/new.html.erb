@@ -1,0 +1,34 @@
+<%= form_with model: @category_records, url:category_records_path, scope: :record, method: :post, data: { turbo: false }, class: "form" do |form| %>
+  <div class="nav">
+    <%= link_to category_records_path do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+    <div>
+      ADD A NEW TRANSACTION
+    </div>
+    <div class="notice">
+      <%= notice %>
+    </div>
+    <div class="actions">
+      <%= form.submit "ADD", class: "loginBtn" %>
+    </div>
+  </div>
+  <div class="textField">
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Transaction name", autofocus: true, autocomplete: "name", class: "form-control stuff",required: true %>
+    </div>
+    <div class="field">
+      <%= form.number_field :amount, placeholder: "Amount", autofocus: true, autocomplete: "email", class: "form-control stuff",required: true %>
+    </div>
+    <div class="card checkbox">
+      <%= form.label :categories, 'Select a Category', class: 'title' %><br>
+      <%= form.collection_check_boxes :category_ids, Category.where(user_id: current_user.id), :id, :name do |cat| %>
+        <div class="checkbox-div" >
+          <%= cat.check_box %>
+          <%= cat.label %><br>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= render partial: "devise/shared/notification" %>
