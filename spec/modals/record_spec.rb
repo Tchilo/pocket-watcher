@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Record, type: :model do
   subject do
     user = User.new(name: 'jake', email: 'jake@gmail.com', password: 'jake123')
-    Record.new(name: 'Mobius', amount: 300, user: user)
+    Record.new(user: user, name: 'Mobius', amount: 300)
   end
 
   before { subject.save }
@@ -13,7 +13,7 @@ RSpec.describe Record, type: :model do
   end
 
   it 'should have a name and amount' do
-    subject.name = ''
+    subject.name = nil
     subject.amount = nil
 
     expect(subject).to_not be_valid

@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @category = current_category
   end
@@ -12,7 +12,7 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to category_records_path(current_category), notice: 'You completed this transaction successfully'
     else
-      render :new, alert: 'New transaction could not be created.'
+      render :new, puts: 'Something went wrong'
     end
   end
 

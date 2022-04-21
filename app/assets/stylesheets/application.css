@@ -60,6 +60,11 @@ body {
   border-top: solid 1px #919191;
 }
 
+.pop {
+  z-index: 9;
+  background: #e71d36;
+}
+
 .new_user ul {
   color: #fff;
   margin-top: 5px;
@@ -70,6 +75,15 @@ li {
   background: #e71d36;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.notice {
+  color: #fff;
+  font-size: 1.2em;
+  background: #e71d36;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .splash {

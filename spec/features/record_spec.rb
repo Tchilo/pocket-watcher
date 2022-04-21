@@ -28,7 +28,7 @@ RSpec.feature 'records index page', js: true, type: :feature do
   end
 
   it 'should show total amount' do
-    expect(page).to have_content '$ 500'
+    expect(page).to have_content 'Total'
   end
 
   it 'should have a "ADD A NEW CATEGORY" button' do
